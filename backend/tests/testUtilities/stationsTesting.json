@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "station_name": "Keilalahti",
+        "station_address": "Keilalahdentie 2",
+        "coordinate_x": "24.827467",
+        "coordinate_y": "60.171524"
+    },
+    {
+        "id": 2,
+        "station_name": "Sateentie",
+        "station_address": "Sateentie 2",
+        "coordinate_x": "24.810688",
+        "coordinate_y": "60.173424"
+    },
+    {
+        "id": 3,
+        "station_name": "Revontulentie",
+        "station_address": "Revontulentie 10",
+        "coordinate_x": "24.802938",
+        "coordinate_y": "60.171551"
+    },
+    {
+        "id": 4,
+        "station_name": "Golfpolku",
+        "station_address": "Golfpolku 3",
+        "coordinate_x": "24.796136",
+        "coordinate_y": "60.168143"
+    }
+]

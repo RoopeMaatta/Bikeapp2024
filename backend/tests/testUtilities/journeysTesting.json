@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1568801,
+        "departure_date_time": "2021-06-20 12:40:23",
+        "return_date_time": "2021-06-20 13:18:04",
+        "departure_station_id": 1,
+        "return_station_id": 2,
+        "distance": 7200,
+        "duration": 2257
+    },
+    {
+        "id": 1568802,
+        "departure_date_time": "2021-06-20 12:40:22",
+        "return_date_time": "2021-06-20 12:53:38",
+        "departure_station_id": 1,
+        "return_station_id": 3,
+        "distance": 2997,
+        "duration": 793
+    },
+    {
+        "id": 1568803,
+        "departure_date_time": "2021-06-20 12:40:13",
+        "return_date_time": "2021-06-20 12:49:59",
+        "departure_station_id": 1,
+        "return_station_id": 4,
+        "distance": 1647,
+        "duration": 581
+    },
+    {
+        "id": 1568804,
+        "departure_date_time": "2021-06-20 12:40:10",
+        "return_date_time": "2021-06-20 12:51:39",
+        "departure_station_id": 3,
+        "return_station_id": 4,
+        "distance": 2322,
+        "duration": 687
+    }
+]

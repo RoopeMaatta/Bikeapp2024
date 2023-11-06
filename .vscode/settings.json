@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "citybike",
+            "username": "academy",
+            "password": "academy",
+            "name": "DB-5432"
+        }
+    ]
+}
