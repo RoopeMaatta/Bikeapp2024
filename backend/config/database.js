@@ -1,4 +1,3 @@
-// database.js
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
@@ -12,11 +11,11 @@ const {
   NODE_ENV,
 } = process.env;
 
-if (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !(DB_NAME || DB_NAME_TEST)) {
+ if (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !(DB_NAME || DB_NAME_TEST)) {
   throw new Error('Missing required environment variables for database configuration');
 }
 
-const dbName = NODE_ENV === 'test' ? DB_NAME_TEST : DB_NAME;
+const dbName = NODE_ENV  === 'test' ? DB_NAME_TEST : DB_NAME;
 
 const sequelize = new Sequelize(
   dbName,
