@@ -5,9 +5,12 @@ require('dotenv').config();
 beforeAll(async () => {
   // If your seedDatabase function is still using pg, you would need to modify it
   // to work with Sequelize instead.
+  
   await sequelize.authenticate(); // This checks if the connection is okay
   await sequelize.sync({ force: true }); // This creates the tables by dropping them first if they exist
+  // await sequelize.sync(); // This creates the tables by dropping them first if they exist
   await seedDatabase(); // Modify this function to use Sequelize as well
+
 });
 
 beforeEach(async () => {

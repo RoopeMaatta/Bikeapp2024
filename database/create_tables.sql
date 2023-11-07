@@ -1,4 +1,4 @@
-CREATE TABLE stations (
+CREATE TABLE station (
   id SERIAL PRIMARY KEY,
   station_name VARCHAR(255),
   station_address VARCHAR(255),
@@ -6,12 +6,12 @@ CREATE TABLE stations (
   coordinate_y VARCHAR(50)
 );
 
-CREATE TABLE journeys (
+CREATE TABLE journey (
   id SERIAL PRIMARY KEY,
   departure_date_time TIMESTAMP,
   return_date_time TIMESTAMP,
-  departure_station_id INTEGER REFERENCES stations(id),
-  return_station_id INTEGER REFERENCES stations(id),
+  departure_station_id INTEGER REFERENCES station(id),
+  return_station_id INTEGER REFERENCES station(id),
   distance INT,
   duration INT
 );

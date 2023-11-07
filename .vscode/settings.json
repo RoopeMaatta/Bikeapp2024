@@ -9,6 +9,16 @@
             "database": "citybike",
             "username": "academy",
             "password": "academy"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "db-5432_test",
+            "database": "citybike_test",
+            "username": "academy",
+            "password": "academy"
         }
     ]
 }

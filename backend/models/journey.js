@@ -20,12 +20,12 @@ module.exports = (sequelize) => {
             departure_station_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
-                references: { model: 'Stations', key: 'id' },
+                references: { model: 'station', key: 'id' },
             },
             return_station_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
-                references: { model: 'Stations', key: 'id' },
+                references: { model: 'station', key: 'id' },
             },
             
             distance: {
