@@ -21,7 +21,9 @@ exports.findAverageDistanceFromStation = async function (stationId) {
     raw: true,
   });
 
-  return Math.round(parseFloat(result[0].averageDistance));
+  return result.length > 0 && result[0].averageDistance !== null
+    ? Math.round(parseFloat(result[0].averageDistance))
+    : 0;
 }
 
 
@@ -34,7 +36,9 @@ exports.findAverageDurationFromStation = async function (stationId) {
     raw: true,
   });
 
-  return Math.round(parseFloat(result[0].averageDuration));
+  return result.length > 0 && result[0].averageDuration !== null
+    ? Math.round(parseFloat(result[0].averageDuration))
+    : 0;
 }
 
 
