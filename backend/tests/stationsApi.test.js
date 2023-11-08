@@ -11,10 +11,12 @@ describe('API tests for stations', () => {
       .expect('Content-Type', /application\/json/);
   });
 
+
   test('all stations are returned', async () => {
     const response = await api.get('/api/stations')
     expect(response.body).toHaveLength(4)
   })
+
 
   test('statistics of station are returned', async () => {
     const response = await api
@@ -31,12 +33,36 @@ describe('API tests for stations', () => {
     });
   });
 
-  test('non existing station id should be handled gracefully', async () => {
+
+  test('non-existing station id should be handled gracefully', async () => {
     const response = await api
-      .get('/api/station/19989888') // non existing id
+      .get('/api/station/19989888') // non-existing id
       .expect(404)
       .expect('Content-Type', /application\/json/);
 
-    expect(response.body).toEqual({ error: 'Station not found' });  });
+    expect(response.body).toEqual({ error: 'Station not found' });
+  });
+
+
+  test('non-valid station id with text should be handled gracefully', async () => {
+    const response = await api
+      .get('/api/station/19989sdfsdf888') // non-valid with text
+      .expect(400)
+      .expect('Content-Type', /application\/json/);
+
+    expect(response.body).toEqual({ error: 'Station ID must be a number' });
+  });
+
+
+  test('non-valid station id with decimals should be handled gracefully', async () => {
+    const response = await api
+      .get('/api/station/243.3432') // non-valid with decimals
+      .expect(400)
+      .expect('Content-Type', /application\/json/);
+
+    expect(response.body).toEqual({ error: 'Station ID must be an integer' });
+  });
+
+
 
 });

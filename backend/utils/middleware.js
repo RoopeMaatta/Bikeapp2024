@@ -48,9 +48,24 @@ function errorHandler(error, request, response, next) {
   }
 }
 
+function validateId(req, res, next) {
+  const { stationId } = req.params;
+
+  // Check if stationId is a number
+  if (!stationId || isNaN(Number(stationId))) {
+    return res.status(400).json({ error: 'Station ID must be a number' });
+  }
+
+  // Check if stationId is an integer
+  if (!Number.isInteger(Number(stationId))) {
+    return res.status(400).json({ error: 'Station ID must be an integer' });
+  }
+
+  // Proceed if validation is successful
+  next();
+}
 
 
 
-
-module.exports = { requestLogger, asyncHandler, unknownEndpoint, errorHandler };
+module.exports = { requestLogger, asyncHandler, unknownEndpoint, errorHandler, validateId };
 
