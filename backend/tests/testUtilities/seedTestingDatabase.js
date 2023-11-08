@@ -1,5 +1,5 @@
 const { Station, Journey } = require('../../models');
-const { sequelize } = require('../../config/database');
+const { sequelize } = require('../../utils/config');
 
 const stationsData = require('./stationsTesting.json');
 const journeysData = require('./journeysTesting.json');
