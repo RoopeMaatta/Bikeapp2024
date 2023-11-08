@@ -1,66 +1,11 @@
-const { Journey } = require('../models');
+const {
+  findAllJourneysToStation,
+  findAllJourneysFromStation,
+  findAverageDistanceFromStation,
+  findAverageDurationFromStation,
+  getStationStatistics
+} = require('../services/stationServices');
 
-// functions //
-
-const { Sequelize } = require('sequelize');
-
-
-async function findAllJourneysToStation(stationId) {
-  const journeys = await Journey.findAll({ where: { return_station_id: stationId } });
-  return journeys.length;
-}
-
-async function findAllJourneysFromStation(stationId) {
-  const journeys = await Journey.findAll({ where: { departure_station_id: stationId } });
-  return journeys.length
-}
-
-async function findAverageDistanceFromStation(stationId) {
-  const result = await Journey.findAll({
-    where: { departure_station_id: stationId },
-    attributes: [
-      [Sequelize.fn('AVG', Sequelize.col('distance')), 'averageDistance']
-    ],
-    raw: true,
-  });
-
-  // Assuming result[0].averageDistance is a string representing a float number
-  return Math.round(parseFloat(result[0].averageDistance));
-}
-
-
-async function findAverageDurationFromStation(stationId) {
-  const result = await Journey.findAll({
-    where: { departure_station_id: stationId },
-    attributes: [
-      [Sequelize.fn('AVG', Sequelize.col('duration')), 'averageDuration']
-    ],
-    raw: true,
-  });
-
-  // Assuming result[0].averageDuration is a string representing a float number
-  return Math.round(parseFloat(result[0].averageDuration));
-}
-
-
-// combining function //
-
-async function getStationStatistics(stationId) {
-  const journeysToStation = await findAllJourneysToStation(stationId);
-  const journeysFromStation = await findAllJourneysFromStation(stationId);
-  const averageDistance = await findAverageDistanceFromStation(stationId);
-  const averageDuration = await findAverageDurationFromStation(stationId);
-
-  return {
-    journeysToStation,
-    journeysFromStation,
-    averageDistance,
-    averageDuration,
-  };
-}
-
-
-// tests //
 
 describe('Station statistics', () => {
   test('finds all journeys to a station', async () => {
