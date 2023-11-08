@@ -23,6 +23,7 @@ describe('API tests for stations', () => {
       .expect('Content-Type', /application\/json/);
 
     expect(response.body).toStrictEqual({
+      stationName: "Keilalahti",
       averageDistance: 3948,
       averageDuration: 1210,
       journeysFromStation: 3,
@@ -30,5 +31,12 @@ describe('API tests for stations', () => {
     });
   });
 
+  test('non existing station id should be handled gracefully', async () => {
+    const response = await api
+      .get('/api/station/19989888') // non existing id
+      .expect(404)
+      .expect('Content-Type', /application\/json/);
+
+    expect(response.body).toEqual({ error: 'Station not found' });  });
 
 });

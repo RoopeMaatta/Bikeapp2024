@@ -1,8 +1,11 @@
 const stationServices = require('../services/stationServices');
-const { Journey } = require('../models');
+const { Station, Journey } = require('../models');
 
 // Mock the Journey model functions
 jest.mock('../models', () => ({
+  Station: {
+    findByPk: jest.fn()
+  },
   Journey: {
     findAll: jest.fn()
   }
@@ -53,15 +56,15 @@ describe('Station statistics services - Error Handling and Boundary Conditions',
   });
 
   test('should handle non-existent stationId gracefully', async () => {
-    // Simulate a stationId that doesn't exist in the database
+    // Mock the Station.findByPk to simulate that no station is found
+    Station.findByPk.mockResolvedValue(null);
+
+    // Mock the Journey.findAll to simulate that no journeys are found
     Journey.findAll.mockResolvedValue([]);
 
-    const stats = await stationServices.getStationStatistics(999);
-    expect(stats).toEqual({
-      journeysToStation: 0,
-      journeysFromStation: 0,
-      averageDistance: 0,
-      averageDuration: 0
-    });
+    // Expect the getStationStatistics to throw an error due to the non-existent station
+    await expect(stationServices.getStationStatistics(999)).rejects.toThrow('Station not found');
   });
+
+
 });

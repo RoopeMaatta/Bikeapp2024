@@ -1,4 +1,4 @@
-const { Journey } = require('../models');
+const { Station, Journey } = require('../models');
 const { Sequelize } = require('sequelize');
 
 
@@ -51,13 +51,20 @@ const {
   findAverageDurationFromStation
 } = exports;
 
+
 exports.getStationStatistics = async function (stationId) {
+  const station = await Station.findByPk(stationId);
+  if (!station) {
+    throw new Error('Station not found');
+  }
+
   const journeysToStation = await findAllJourneysToStation(stationId);
   const journeysFromStation = await findAllJourneysFromStation(stationId);
   const averageDistance = await findAverageDistanceFromStation(stationId);
   const averageDuration = await findAverageDurationFromStation(stationId);
 
   return {
+    stationName: station.station_name,
     journeysToStation,
     journeysFromStation,
     averageDistance,

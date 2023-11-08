@@ -25,6 +25,7 @@ describe('Station statistics services - Happy Path', () => {
   test('gets combined station statistics', async () => {
     const stats = await stationServices.getStationStatistics(1);
     expect(stats).toStrictEqual({
+      stationName: "Keilalahti",
       averageDistance: 3948,
       averageDuration: 1210,
       journeysFromStation: 3,
