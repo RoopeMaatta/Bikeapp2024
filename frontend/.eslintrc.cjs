@@ -5,7 +5,11 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+  ],
+  "plugins": [
+    "jest",
+    "react"
   ],
   "overrides": [
     {
@@ -24,9 +28,6 @@ module.exports = {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
   "rules": { "indent": [
     "error",
     2

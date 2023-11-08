@@ -6,6 +6,9 @@ module.exports = {
     "node": true
   },
   "extends": "eslint:recommended",
+  "plugins": [
+    "jest"
+  ],
   "overrides": [
     {
       "env": {
