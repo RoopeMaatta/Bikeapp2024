@@ -11,7 +11,7 @@ const {
   NODE_ENV,
 } = process.env;
 
- if (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !(DB_NAME || DB_NAME_TEST)) {
+if (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !(DB_NAME || DB_NAME_TEST)) {
   throw new Error('Missing required environment variables for database configuration');
 }
 
@@ -25,7 +25,7 @@ const sequelize = new Sequelize(
     host: DB_HOST,
     dialect: 'postgres',
     port: DB_PORT,
-    logging: false, 
+    logging: false,
   }
 );
 

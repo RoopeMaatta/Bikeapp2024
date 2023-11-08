@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 const apiUrl = import.meta.env.VITE_API_URL
 
 const App = () => {
   const [stations, setStations] = useState([]); // State to hold stations data
 
   useEffect(() => {
-    console.log('API URL:', apiUrl); // Check the API URL value
     const fetchStations = async () => {
       try {
 
@@ -15,7 +14,6 @@ const App = () => {
         }
         const data = await response.json();
         setStations(data);
-        console.log(data)
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
       }
