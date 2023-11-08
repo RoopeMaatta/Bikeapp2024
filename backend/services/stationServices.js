@@ -65,6 +65,7 @@ exports.getStationStatistics = async function (stationId) {
 
   return {
     stationName: station.station_name,
+    stationAddress: station.station_address,
     journeysToStation,
     journeysFromStation,
     averageDistance,

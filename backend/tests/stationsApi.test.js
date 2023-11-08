@@ -26,6 +26,7 @@ describe('API tests for stations', () => {
 
     expect(response.body).toStrictEqual({
       stationName: "Keilalahti",
+      stationAddress: "Keilalahdentie 2",
       averageDistance: 3948,
       averageDuration: 1210,
       journeysFromStation: 3,
