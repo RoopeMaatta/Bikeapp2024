@@ -5,7 +5,7 @@ const { asyncHandler } = require('../utils/middleware'); // Adjust the path to t
 
 router.get('/', asyncHandler(async (req, res) => {
   const stations = await Station.findAll({
-    attributes: ['station_name'],
+    attributes: ['station_name', "id"],
     order: [['station_name', 'ASC']]
   });
   res.json(stations);
