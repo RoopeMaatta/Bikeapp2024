@@ -1,3 +1,5 @@
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StationList from './components/StationList';
@@ -30,12 +32,14 @@ const App = () => {
   if (error) return <p>Error fetching stations: {error}</p>;
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<StationList stations={stations} />} />
-        <Route path="/stations/:id" element={<StationDetails />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<StationList stations={stations} />} />
+          <Route path="/stations/:id" element={<StationDetails />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 };
 

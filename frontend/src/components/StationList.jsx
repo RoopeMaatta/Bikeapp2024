@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
 
 const StationList = ({ stations }) => {
   return (
     <div>
-      <h1>Stations</h1>
+      <Typography variant="h1" component="h1" gutterBottom>
+        Stations
+      </Typography>
       <ul>
         {stations.map((station) => (
           <li key={station.id}>
-            <Link to={`/stations/${station.id}`}>{station.station_name}</Link>
+            <Link to={`/stations/${station.id}`}>
+              <Typography variant="body1" component="p">
+                {station.station_name}
+              </Typography>
+            </Link>
           </li>
         ))}
       </ul>
@@ -20,9 +27,9 @@ StationList.propTypes = {
   stations: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      station_name: PropTypes.string.isRequired
+      station_name: PropTypes.string.isRequired,
     })
-  ).isRequired
+  ).isRequired,
 };
 
 export default StationList;
