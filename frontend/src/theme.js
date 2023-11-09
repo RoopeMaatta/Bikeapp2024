@@ -48,6 +48,23 @@ const theme = createTheme({
       fontWeight: 600,
     },
   },
+
+  palette: {
+    background: {
+      default: '#b3b3b3'
+    },
+  },
+
+  // components: {
+  //   MuiPaper: {
+  //     styleOverrides: {
+  //       root: {
+  //         backgroundColor: '#ffffff',
+  //       },
+  //     },
+  //   },
+  // },
+
 });
 
 export default theme;
