@@ -13,13 +13,21 @@ const StationList = ({ stations }) => {
       <Typography variant="h1" component="h1" gutterBottom>
         Stations
       </Typography>
-      <Paper elevation={1} sx={{ borderRadius: '8px', padding: '16px' }}>
+      <Paper elevation={1} sx={{ borderRadius: '8px', overflow: 'hidden' }}>
         <List sx={{ padding: 0 }}>
           {stations.map((station) => (
             <ListItem
               key={station.id}
               disablePadding
-              sx={{ display: 'flex', justifyContent: 'space-between', padding: '8px 16px' }}
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                padding: '8px 16px',
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                  borderRadius: '10px',
+                },
+              }}
             >
               <Link to={`/stations/${station.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
                 <Typography variant="body1" component="p">
