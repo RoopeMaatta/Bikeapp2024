@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.send('Hello World backend!');
 });
 app.use('/api/stations', stationsRouter);
-app.use('/api/station', singleStationRouter);
+app.use('/api/stations', singleStationRouter);
 
 
 app.use(unknownEndpoint); // Use the unknown endpoint middleware after all route handlers

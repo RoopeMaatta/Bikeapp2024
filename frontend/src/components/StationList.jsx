@@ -8,7 +8,7 @@ const StationList = ({ stations }) => {
       <ul>
         {stations.map((station) => (
           <li key={station.id}>
-            <Link to={`/station/${station.id}`}>{station.station_name}</Link>
+            <Link to={`/stations/${station.id}`}>{station.station_name}</Link>
           </li>
         ))}
       </ul>

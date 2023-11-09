@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const stationServices = require('../services/stationServices'); // Adjust the path to your services file
-const { asyncHandler, validateId } = require('../utils/middleware'); // Adjust the path to the middleware.js file
+const stationServices = require('../services/stationServices');
+const { asyncHandler, validateId } = require('../utils/middleware');
 
 // Route to get statistics for a single station by ID
 router.get('/:stationId', validateId, asyncHandler(async (req, res) => {

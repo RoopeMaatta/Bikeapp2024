@@ -11,7 +11,7 @@ const StationDetails = () => {
   useEffect(() => {
     const fetchStationDetails = async () => {
       try {
-        const response = await fetch(`${apiUrl}/api/station/${id}`);
+        const response = await fetch(`${apiUrl}/api/stations/${id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
