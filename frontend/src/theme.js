@@ -55,15 +55,25 @@ const theme = createTheme({
     },
   },
 
-  // components: {
-  //   MuiPaper: {
-  //     styleOverrides: {
-  //       root: {
-  //         backgroundColor: '#ffffff',
-  //       },
-  //     },
-  //   },
-  // },
+  custom: {
+    spacing: {
+      small: '8px',
+      medium: '16px',
+      large: '32px',
+    },
+    colors: {
+      middleGreyInfoElement: 'rgba(0, 0, 0, 0.4)',
+      lightGreyFocus: 'rgba(0, 0, 0, 0.04)',
+    },
+    borderRadius: {
+      small: '8px',
+    },
+    iconSize: {
+      small: '0.8rem',
+    },
+    // ... other custom values
+  },
+
 
 });
 
