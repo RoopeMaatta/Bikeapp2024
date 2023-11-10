@@ -36,8 +36,8 @@ function errorHandler(error, request, response, next) {
     response.status(400).json({ error: 'malformatted id' });
   } else if (error.name === 'ValidationError') {
     response.status(400).json({ error: error.message });
-  } else if (error.message === 'Station not found') {
-    response.status(404).json({ error: 'Station not found' });
+  } else if (error.message.includes(' not found')) {
+    response.status(404).json({ error: error.message });
   } else {
     logger.error(error.stack);
 

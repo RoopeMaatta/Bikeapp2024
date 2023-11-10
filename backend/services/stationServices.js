@@ -1,18 +1,17 @@
 const { Station, Journey } = require('../models');
 const { Sequelize } = require('sequelize');
 
-
-exports.findAllJourneysToStation = async function (stationId) {
+const findAllJourneysToStation = async (stationId) => {
   const journeys = await Journey.findAll({ where: { return_station_id: stationId } });
   return journeys.length;
-}
+};
 
-exports.findAllJourneysFromStation = async function (stationId) {
+const findAllJourneysFromStation = async (stationId) => {
   const journeys = await Journey.findAll({ where: { departure_station_id: stationId } });
-  return journeys.length
-}
+  return journeys.length;
+};
 
-exports.findAverageDistanceFromStation = async function (stationId) {
+const findAverageDistanceFromStation = async (stationId) => {
   const result = await Journey.findAll({
     where: { departure_station_id: stationId },
     attributes: [
@@ -24,10 +23,9 @@ exports.findAverageDistanceFromStation = async function (stationId) {
   return result.length > 0 && result[0].averageDistance !== null
     ? Math.round(parseFloat(result[0].averageDistance))
     : 0;
-}
+};
 
-
-exports.findAverageDurationFromStation = async function (stationId) {
+const findAverageDurationFromStation = async (stationId) => {
   const result = await Journey.findAll({
     where: { departure_station_id: stationId },
     attributes: [
@@ -39,20 +37,9 @@ exports.findAverageDurationFromStation = async function (stationId) {
   return result.length > 0 && result[0].averageDuration !== null
     ? Math.round(parseFloat(result[0].averageDuration))
     : 0;
-}
+};
 
-
-// Combining functions
-
-const {
-  findAllJourneysToStation,
-  findAllJourneysFromStation,
-  findAverageDistanceFromStation,
-  findAverageDurationFromStation
-} = exports;
-
-
-exports.getStationStatistics = async function (stationId) {
+const getStationStatistics = async (stationId) => {
   const station = await Station.findByPk(stationId);
   if (!station) {
     throw new Error('Station not found');
@@ -71,4 +58,12 @@ exports.getStationStatistics = async function (stationId) {
     averageDistance,
     averageDuration,
   };
-}
+};
+
+module.exports = {
+  findAllJourneysToStation,
+  findAllJourneysFromStation,
+  findAverageDistanceFromStation,
+  findAverageDurationFromStation,
+  getStationStatistics
+};

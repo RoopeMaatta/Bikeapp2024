@@ -20,7 +20,7 @@ describe('API tests for stations', () => {
 
   test('statistics of station are returned', async () => {
     const response = await api
-      .get('/api/station/1')
+      .get('/api/stations/1')
       .expect(200)
       .expect('Content-Type', /application\/json/);
 
@@ -37,7 +37,7 @@ describe('API tests for stations', () => {
 
   test('non-existing station id should be handled gracefully', async () => {
     const response = await api
-      .get('/api/station/19989888') // non-existing id
+      .get('/api/stations/19989888') // non-existing id
       .expect(404)
       .expect('Content-Type', /application\/json/);
 
@@ -47,7 +47,7 @@ describe('API tests for stations', () => {
 
   test('non-valid station id with text should be handled gracefully', async () => {
     const response = await api
-      .get('/api/station/19989sdfsdf888') // non-valid with text
+      .get('/api/stations/19989sdfsdf888') // non-valid with text
       .expect(400)
       .expect('Content-Type', /application\/json/);
 
@@ -57,7 +57,7 @@ describe('API tests for stations', () => {
 
   test('non-valid station id with decimals should be handled gracefully', async () => {
     const response = await api
-      .get('/api/station/243.3432') // non-valid with decimals
+      .get('/api/stations/243.3432') // non-valid with decimals
       .expect(400)
       .expect('Content-Type', /application\/json/);
 
