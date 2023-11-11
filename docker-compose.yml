@@ -1,0 +1,41 @@
+version: '3.1'
+services:
+  frontend:
+    depends_on: 
+      - backend
+    build: /frontend/.
+    ports:
+      - 5173:5173
+    environment:
+      VITE_API_URL: http://localhost:3000
+  backend:
+    depends_on: 
+      - db
+    build: /backend/.
+    ports:
+      - 3000:3000
+    environment:
+      DB_USER: 'academy'
+      DB_HOST: 'db'
+      DB_NAME: 'citybike'
+      DB_NAME_TEST: 'citybike_test'
+      DB_PASSWORD: 'academy'
+      DB_PORT: 5432
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: academy
+      POSTGRES_PASSWORD: academy
+      POSTGRES_DB: citybike
+    build:
+      context: /database/.
+      dockerfile: Dockerfile
+    ports:
+      - 5432:5432
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  
