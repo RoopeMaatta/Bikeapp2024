@@ -5,14 +5,16 @@ import Paper from '@mui/material/Paper';
 import { groupStations } from '../utils/groupStations';
 import StationGroup from './StationGroup';
 import SearchBar from './SearchBar';
+import { useNavigate } from 'react-router-dom';
 
 const StationList = ({ stations }) => {
   const theme = useTheme();
   const groupedStations = groupStations(stations);
 
+
+  const navigate = useNavigate();
   const handleStationSelect = (stationId) => {
-    // Implement your logic for when a station is selected
-    console.log('Selected Station ID:', stationId);
+    navigate(`/stations/${stationId}`);
   };
 
   return (

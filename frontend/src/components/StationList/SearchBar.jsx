@@ -27,6 +27,11 @@ const SearchBar = ({ onStationSelect }) => {
     <Autocomplete
       options={stations}
       getOptionLabel={(option) => option.station_name}
+
+      renderOption={(props, option) => (
+        <li {...props} key={option.id}>{option.station_name}</li>
+      )}
+
       PaperComponent={CustomPopUPPaper}
       ListboxProps={{
         sx: {
