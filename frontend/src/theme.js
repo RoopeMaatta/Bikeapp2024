@@ -67,6 +67,7 @@ const theme = createTheme({
     },
     borderRadius: {
       small: '8px',
+      medium: '15px',
     },
     iconSize: {
       small: '0.8rem',

@@ -5,6 +5,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTheme } from '@mui/material/styles';
+import { hoverEffect } from '../sharedStyles';
 
 const StationItem = ({ station }) => {
   const theme = useTheme();
@@ -16,10 +17,7 @@ const StationItem = ({ station }) => {
         display: 'flex',
         justifyContent: 'space-between',
         padding: `${theme.custom.spacing.small} ${theme.custom.spacing.medium}`,
-        '&:hover': {
-          backgroundColor: theme.custom.colors.lightGreyFocus,
-          borderRadius: theme.custom.borderRadius.small,
-        },
+        ...hoverEffect(theme),
       }}
     >
       <Link to={`/stations/${station.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
