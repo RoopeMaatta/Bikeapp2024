@@ -3,15 +3,15 @@ services:
   frontend:
     depends_on: 
       - backend
-    build: /frontend/.
+    build: ./frontend/.
     ports:
-      - 5173:5173
+      - 6969:6969
     environment:
-      VITE_API_URL: http://localhost:3000
+      VITE_API_URL: https://super-duper-garbanzo-rj7p946q94xf57r-3000.app.github.dev
   backend:
     depends_on: 
       - db
-    build: /backend/.
+    build: ./backend/.
     ports:
       - 3000:3000
     environment:
@@ -29,7 +29,7 @@ services:
       POSTGRES_PASSWORD: academy
       POSTGRES_DB: citybike
     build:
-      context: /database/.
+      context: ./database/.
       dockerfile: Dockerfile
     ports:
       - 5432:5432
