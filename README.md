@@ -19,7 +19,10 @@ _______________________________________________________________________
 docker compose up --build --renew-anon-volumes
 ```
 (This may take a few minutes)
-4. Check in your terminal that the compose has finished 
+4. Check in your terminal that the compose has finished for each container:
+- bikeapp2024-backend-1   | Server is running on port 3000
+- bikeapp2024-db-1        | <timestamp> LOG: database system is ready to accept connections
+- bikeapp2024-frontend-1  | VITE v4.5.0  ready in <time> 
 5. Open your browser to http://localhost: 5173
 
 _______________________________________________________________________
@@ -37,14 +40,17 @@ _______________________________________________________________________
 docker compose up --build --renew-anon-volumes
 ```
 (This may take a few minutes)
-5. Check in your terminal that the compose has finished
+5. Check in your terminal that the compose has finished for each container:
+- bikeapp2024-backend-1   | Server is running on port 3000
+- bikeapp2024-db-1        | <timestamp> LOG: database system is ready to accept connections
+- bikeapp2024-frontend-1  | VITE v4.5.0  ready in <time>
 6. Open the application running on port 5173
 
 _______________________________________________________________________
 
 # Tests
 
-Backend tests are run when you run the project with docker. They can also be executed manually through a running docker with the command:
+Backend tests are run when the docker images are built. When building and running the project with docker compose any failing tests will halt the process and display the error. They can also be executed manually through a terminal with the command:
 ```
 docker exec -w /app/tests bikeapp2024-backend-1 npm test
 ```
