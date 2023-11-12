@@ -70,6 +70,7 @@ General
 - EsLint
 - GithubCodespaces
 - VS Code online
+- ChatGPT
 
 
 _______________________________________________________________________

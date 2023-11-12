@@ -3,7 +3,7 @@ import theme from './theme';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StationList from './components/StationList/index';
-import StationDetails from './components/StationDetails';
+import StationDetails from './components/StationDetails/index';
 import { fetchStations } from './services/stationService'; // Importing from stationService.js
 
 const App = () => {
