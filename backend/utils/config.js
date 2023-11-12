@@ -3,7 +3,6 @@ require('dotenv').config();
 
 const {
   DB_NAME,
-  DB_NAME_TEST,
   DB_USER,
   DB_PASSWORD,
   DB_HOST,
@@ -11,22 +10,28 @@ const {
   NODE_ENV,
 } = process.env;
 
-if (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !(DB_NAME || DB_NAME_TEST)) {
+// When not in test environment, ensure all required variables are present
+if (NODE_ENV !== 'test' && (!DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT || !DB_NAME)) {
   throw new Error('Missing required environment variables for database configuration');
 }
 
-const dbName = NODE_ENV  === 'test' ? DB_NAME_TEST : DB_NAME;
-
-const sequelize = new Sequelize(
-  dbName,
-  DB_USER,
-  DB_PASSWORD,
-  {
-    host: DB_HOST,
-    dialect: 'postgres',
-    port: DB_PORT,
-    logging: false,
-  }
-);
+let sequelize;
+if (NODE_ENV === 'test') {
+  // For test environment, use SQLite in-memory database
+  sequelize = new Sequelize('sqlite::memory:', { logging: false });
+} else {
+  // Regular database configuration for non-test environments
+  sequelize = new Sequelize(
+    DB_NAME,
+    DB_USER,
+    DB_PASSWORD,
+    {
+      host: DB_HOST,
+      dialect: 'postgres',
+      port: DB_PORT,
+      logging: false,
+    }
+  );
+}
 
 module.exports = { sequelize };

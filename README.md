@@ -17,6 +17,7 @@ _______________________________________________________________________
 ```
 docker compose up --build --renew-anon-volumes
 ```
+(This may take a few minutes)
 4. Open the aplication running on port 5173
 
 _______________________________________________________________________
@@ -33,6 +34,7 @@ _______________________________________________________________________
 ```
 docker compose up --build --renew-anon-volumes
 ```
+(This may take a few minutes)
 5. Open the aplication running on port 5173
 
 _______________________________________________________________________

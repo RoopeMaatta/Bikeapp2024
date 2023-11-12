@@ -1,7 +1,9 @@
 require('dotenv').config();
 
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../utils/config');
+const config = require('../utils/config');
+const { sequelize } = config;
+
 
 // Import models and pass DataTypes
 const Station = require('./station')(sequelize, DataTypes);

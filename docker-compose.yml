@@ -8,6 +8,7 @@ services:
       - 6969:6969
     environment:
       VITE_API_URL: https://super-duper-garbanzo-rj7p946q94xf57r-3000.app.github.dev
+  
   backend:
     depends_on: 
       - db
@@ -18,9 +19,9 @@ services:
       DB_USER: 'academy'
       DB_HOST: 'db'
       DB_NAME: 'citybike'
-      DB_NAME_TEST: 'citybike_test'
       DB_PASSWORD: 'academy'
       DB_PORT: 5432
+
   db:
     image: postgres
     restart: always
