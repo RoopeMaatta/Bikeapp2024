@@ -5,7 +5,7 @@ import { formatDistance, formatDuration } from '../utils/conversion';
 import { useTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import SwipeRightAltOutlinedIcon from '@mui/icons-material/SwipeRightAltOutlined';
-
+import SwipeLeftAltOutlinedIcon from '@mui/icons-material/SwipeLeftAltOutlined';
 
 const StationDetailsView = ({ stationDetails }) => {
   const theme = useTheme();
@@ -60,7 +60,7 @@ const StationDetailsView = ({ stationDetails }) => {
             gap: theme.custom.spacing.mini,
             alignItems: 'center'  // Align items vertically
           }}>
-            <SwipeRightAltOutlinedIcon
+            <SwipeLeftAltOutlinedIcon
               sx={{
                 fontSize: "1.8rem",
                 color: theme.custom.colors.middleGreyInfoElement,
