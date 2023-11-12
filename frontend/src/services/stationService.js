@@ -6,7 +6,6 @@ const fetchStations = async () => {
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  console.log(response.body)
   return response.json();
 };
 

@@ -76,6 +76,7 @@ General
 _______________________________________________________________________
 
 # Todo
+- Allign station details arrow icons to left with text underneath
 - Grid for screen size scaling
 - Pagination to get stations api.
 - Frontend testing.
