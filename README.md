@@ -79,7 +79,9 @@ General
 _______________________________________________________________________
 
 # Todo
-- Allign station details arrow icons to left with text underneath
+- 
+- StationDetails back button styling and loading view.
+- Frontend style results as a "pop-up" like card over StationsList
 - Grid for screen size scaling
 - Pagination to get stations api.
 - Frontend testing.

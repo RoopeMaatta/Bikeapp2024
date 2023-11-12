@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import StyledInfo from './StyledInfo';
 import { formatDistance, formatDuration } from '../utils/conversion';
@@ -6,7 +7,9 @@ import { useTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import SwipeRightAltOutlinedIcon from '@mui/icons-material/SwipeRightAltOutlined';
 import SwipeLeftAltOutlinedIcon from '@mui/icons-material/SwipeLeftAltOutlined';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import SectionTitle from "./SectionTitle"
+import Button from '@mui/material/Button'
 
 const paperStyle = (theme) => ({
   borderRadius: theme.custom.borderRadius.medium,
@@ -20,6 +23,18 @@ const StationDetailsView = ({ stationDetails }) => {
 
   return (
     <div style={{ padding: theme.custom.spacing.medium }}>
+      <Button
+        component={RouterLink}
+        to="/"
+        variant="outlined"
+        startIcon={<ArrowBackIosNewOutlinedIcon />}
+        sx={{
+          marginBottom: 3, // Adjust the value as needed
+        }}
+      >
+      Back to Stations
+      </Button>
+
       <Typography variant="h1" component="h1">
         {stationDetails.stationName}
       </Typography>
