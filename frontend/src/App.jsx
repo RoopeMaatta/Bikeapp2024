@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StationList from './components/StationList/index';
 import StationDetails from './components/StationDetails/index';
-import { fetchStations } from './services/stationService'; // Importing from stationService.js
+import { fetchStations } from './services/stationService';
+
+
+// Main component of the application with routing and station data fetching logic
+
 
 const App = () => {
   const [stations, setStations] = useState([]);

@@ -1,6 +1,7 @@
 const { Model } = require('sequelize');
 
-// export placeholder function for model definition
+// Exports stations model
+
 module.exports = (sequelize, DataTypes) => {
   class Station extends Model {}
 

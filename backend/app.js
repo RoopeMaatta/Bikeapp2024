@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+// Main Express application setup with routes and middleware
+
 const express = require('express');
 const cors = require('cors');
 const { requestLogger } = require('./utils/middleware');

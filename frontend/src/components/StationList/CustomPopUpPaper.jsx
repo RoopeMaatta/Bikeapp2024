@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 
+// Component for custom paper used in searchbar
+
 const CustomPopUPPaper = (props) => (
   <Paper
     {...props}

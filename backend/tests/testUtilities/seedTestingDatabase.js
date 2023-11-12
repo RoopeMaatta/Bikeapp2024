@@ -4,6 +4,7 @@ const { sequelize } = require('../../utils/config');
 const stationsData = require('./stationsTesting.json');
 const journeysData = require('./journeysTesting.json');
 
+// insert testing data into the in-memory database for testing
 const seedDatabase = async () => {
   try {
     // Using Sequelize to handle transactions

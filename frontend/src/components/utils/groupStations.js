@@ -1,3 +1,5 @@
+// Groups stations by the first letter of their name
+
 export const groupStations = (stations) => {
   return stations.reduce((acc, station) => {
     const firstLetter = station.station_name[0].toUpperCase();

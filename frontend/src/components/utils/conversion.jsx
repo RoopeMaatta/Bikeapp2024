@@ -1,5 +1,7 @@
 import { StyledNumber, StyledUnit } from './styledComponents';
 
+// formats and converts units into a more userfrinfly format
+
 export function formatDistance(distanceInMeters) {
   if (distanceInMeters < 1000) {
     return <><StyledNumber>{distanceInMeters}</StyledNumber> <StyledUnit>m</StyledUnit></>;

@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
+// Exports journey model
+
 module.exports = (sequelize) => {
   class Journey extends Model {
     static associate(models) {

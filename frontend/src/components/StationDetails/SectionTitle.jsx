@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
+// Component that takes a icon and title and styles them
 
 const SectionTitle = ({ IconComponent, title }) => {
   const theme = useTheme();

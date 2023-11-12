@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Custom hook for fetching and managing state of a specific station's details.
+ * It handles data fetching, loading state, and error handling for station details based on a given station ID.
+ */
+
+
 const useStationDetails = (id) => {
   const [stationDetails, setStationDetails] = useState(null);
   const [loading, setLoading] = useState(true);

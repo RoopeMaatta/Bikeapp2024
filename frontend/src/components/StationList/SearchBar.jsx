@@ -10,6 +10,7 @@ import { hoverEffect } from '../sharedStyles';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 
+// component for autosuggest searchbar
 
 const SearchBar = ({ onStationSelect }) => {
   const [stations, setStations] = useState([]);

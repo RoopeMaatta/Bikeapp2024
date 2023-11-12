@@ -5,6 +5,8 @@ import List from '@mui/material/List';
 import { useTheme } from '@mui/material/styles';
 import StationItem from './StationItem';
 
+// Component to group station by first letter.
+
 const StationGroup = ({ letter, stations }) => {
   const theme = useTheme();
 

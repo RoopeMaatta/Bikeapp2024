@@ -7,6 +7,9 @@ import StationGroup from './StationGroup';
 import SearchBar from './SearchBar';
 import { useNavigate } from 'react-router-dom';
 
+// Component that renders a list of stations, grouped alphabetically, with a search functionality
+
+
 const StationList = ({ stations }) => {
   const theme = useTheme();
   const groupedStations = groupStations(stations);

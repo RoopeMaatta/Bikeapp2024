@@ -5,9 +5,9 @@ services:
       - backend
     build: ./frontend/.
     ports:
-      - 6969:6969
+      - 5173:5173
     environment:
-      VITE_API_URL: https://super-duper-garbanzo-rj7p946q94xf57r-3000.app.github.dev
+      VITE_API_URL: http://localhost:3000
   
   backend:
     depends_on: 

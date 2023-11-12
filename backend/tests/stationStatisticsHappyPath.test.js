@@ -1,5 +1,6 @@
 const stationServices = require('../services/stationServices');
 
+// Sequelize model tests stationServices succees cases
 
 describe('Station statistics services - Happy Path', () => {
   test('finds all journeys to a station', async () => {

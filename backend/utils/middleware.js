@@ -1,5 +1,8 @@
-const logger = require('../utils/logger'); // Adjust the path as necessary
+const logger = require('../utils/logger');
 
+// Middleware utilities for logging and error handling in Express
+
+// Log each incoming request
 const requestLogger = (request, response, next) => {
   logger.info('Method:', request.method);
   logger.info('Path:  ', request.path);
@@ -12,7 +15,7 @@ const requestLogger = (request, response, next) => {
   next();
 };
 
-// Handler function to wrap each route
+// Middleware wrapper for async route handlers
 function asyncHandler(cb) {
   return async (req, res, next) => {
     try {
@@ -24,11 +27,12 @@ function asyncHandler(cb) {
   };
 }
 
-
+// Handler for requests to unknown endpoints
 function unknownEndpoint(request, response) {
   response.status(404).send({ error: 'unknown endpoint' });
 }
 
+// Global error handler middleware
 function errorHandler(error, request, response, next) {
   logger.error(error.message);
 
@@ -48,6 +52,7 @@ function errorHandler(error, request, response, next) {
   }
 }
 
+// Validate stationId parameter in the request
 function validateId(req, res, next) {
   const { stationId } = req.params;
 

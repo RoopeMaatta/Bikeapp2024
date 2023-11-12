@@ -1,6 +1,9 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
+// Database connection setup with Sequelize, supporting both test and production environments
+
+
 const {
   DB_NAME,
   DB_USER,

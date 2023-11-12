@@ -1,7 +1,8 @@
 const supertest = require('supertest');
-const app = require('../app'); // Adjust the path to where your Express app is defined
-
+const app = require('../app');
 const api = supertest(app);
+
+// Sequelize model tests for Api endpoint
 
 describe('API tests for stations', () => {
   test('data is returned as JSON', async () => {

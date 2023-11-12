@@ -1,5 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 
+// Custom Material-UI theme configuration for the application
+
+
 const theme = createTheme({
   typography: {
     fontFamily: '"Figree", sans-serif', // Assuming Figree is the font-family
@@ -73,7 +76,7 @@ const theme = createTheme({
     iconSize: {
       small: '0.8rem',
     },
-    // ... other custom values
+
   },
 
 

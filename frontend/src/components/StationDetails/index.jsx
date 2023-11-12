@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import useStationDetails from './useStationDetails';
 import StationDetailsView from './StationDetailsView';
 
+// Renders detailed information for a selected station based on its ID from URL parameters.
 
 const StationDetails = () => {
   const { id } = useParams();

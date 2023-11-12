@@ -79,7 +79,6 @@ General
 _______________________________________________________________________
 
 # Todo
-- 
 - StationDetails back button styling and loading view.
 - Frontend style results as a "pop-up" like card over StationsList
 - Grid for screen size scaling
@@ -87,6 +86,7 @@ _______________________________________________________________________
 - Frontend testing.
 - Loading message styling.
 - Error message styling.
+- Re-write better comments for files and functions
 
 - Extra features outside of the assignment scope:
     - Journey query filters

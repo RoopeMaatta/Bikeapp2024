@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+// Load environment variables and initialize Sequelize models with associations
+
+
 const { DataTypes } = require('sequelize');
 const config = require('../utils/config');
 const { sequelize } = config;

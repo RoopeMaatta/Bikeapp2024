@@ -1,6 +1,8 @@
 const stationServices = require('../services/stationServices');
 const { Station, Journey } = require('../models');
 
+// Sequelize model tests stationServices error cases
+
 // Mock the Journey model functions
 jest.mock('../models', () => ({
   Station: {

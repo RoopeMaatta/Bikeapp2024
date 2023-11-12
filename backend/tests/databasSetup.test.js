@@ -1,5 +1,7 @@
 const { Station, Journey } = require('../models');
 
+// Sequelize model tests for Station and Journey existing in database
+
 describe('Database setup with Sequelize', () => {
 
   test('should find 4 stations', async () => {

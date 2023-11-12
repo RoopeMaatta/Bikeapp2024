@@ -7,6 +7,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTheme } from '@mui/material/styles';
 import { hoverEffect } from '../sharedStyles';
 
+// Component to display an individual station item with navigation link
+
 const StationItem = ({ station }) => {
   const theme = useTheme();
 
