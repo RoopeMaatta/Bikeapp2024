@@ -10,15 +10,17 @@ about 95% of this project was completed on my iPad pro using githubCodespaces an
 _______________________________________________________________________
 
 # Instructions for running the project on your local coputer
-1. Install Docker Desktop on your computer (https://docs.docker.com/desktop/), or inside vsCode
+1. You need to have a functional docker environment running on your computer, including docker compose.
+1.1 If you do not have a working docker environment you can use for example rancher desktop
 2. Clone this repository
-3. On command line under this folder run:
+3. In a terminal with this repository as the working directory run:
 
 ```
 docker compose up --build --renew-anon-volumes
 ```
 (This may take a few minutes)
-4. Open the aplication running on port 5173
+4. Check in your terminal that the compose has finished 
+5. Open your browser to http://localhost: 5173
 
 _______________________________________________________________________
 
@@ -35,13 +37,14 @@ _______________________________________________________________________
 docker compose up --build --renew-anon-volumes
 ```
 (This may take a few minutes)
-5. Open the aplication running on port 5173
+5. Check in your terminal that the compose has finished
+6. Open the application running on port 5173
 
 _______________________________________________________________________
 
 # Tests
 
-Backend tests are run when you run the project with docker. They can also be executed manually trough a running docker with the command:
+Backend tests are run when you run the project with docker. They can also be executed manually through a running docker with the command:
 ```
 docker exec -w /app/tests bikeapp2024-backend-1 npm test
 ```
