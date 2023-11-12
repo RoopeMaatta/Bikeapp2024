@@ -7,6 +7,9 @@ import { useTheme } from '@mui/material/styles';
 import CustomPopUPPaper from './CustomPopUpPaper';
 const apiUrl = import.meta.env.VITE_API_URL;
 import { hoverEffect } from '../sharedStyles';
+import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse';
+
 
 const SearchBar = ({ onStationSelect }) => {
   const [stations, setStations] = useState([]);
@@ -28,9 +31,26 @@ const SearchBar = ({ onStationSelect }) => {
       options={stations}
       getOptionLabel={(option) => option.station_name}
 
-      renderOption={(props, option) => (
-        <li {...props} key={option.id}>{option.station_name}</li>
-      )}
+      renderOption={(props, option, { inputValue }) => {
+        const matches = match(option.station_name, inputValue, {
+          insideWords: true,
+          findAllOccurrences: true
+        });
+        const parts = parse(option.station_name, matches);
+
+        return (
+          <li {...props} key={option.id}>
+            <div>
+              {parts.map((part, index) => (
+                <span key={index} style={{ fontWeight: part.highlight ? 700 : 400 }}>
+                  {part.text}
+                </span>
+              ))}
+            </div>
+          </li>
+        );
+      }}
+
 
       PaperComponent={CustomPopUPPaper}
       ListboxProps={{

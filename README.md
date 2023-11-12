@@ -39,8 +39,10 @@ _______________________________________________________________________
 
 # Tests
 
-Backend tests are run as the project starts. They can also be run manually by:
-INSTRUCTIONS HERE
+Backend tests are run when you run the project with docker. They can also be executed manually trough a running docker with the command:
+```
+docker exec -w /app/tests bikeapp2024-backend-1 npm test
+```
 
 Due to time restraints frontend testing was left out of this project.
 
