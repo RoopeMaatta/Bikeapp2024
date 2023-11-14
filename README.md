@@ -32,8 +32,9 @@ _______________________________________________________________________
 2. Clone this repository
 3. Inside this root folders docker-compose.yml file change the frontends:
     VITE_API_URL: http://localhost:3000
-    to your codespaceses base url, with port 3000. It could look like this for example:
+    to your codespaceses base url, with port "3000" and ".app". It could look like this for example:
     VITE_API_URL: https://super-duper-garbanzo-rj7p946q94xf57r-3000.app.github.dev
+    (notice no "/" at the end of the url)
 4. On command line under this folder run:
 
 ```
@@ -44,7 +45,8 @@ docker compose up --build --renew-anon-volumes
 - bikeapp2024-backend-1   | Server is running on port 3000
 - bikeapp2024-db-1        | <timestamp> LOG: database system is ready to accept connections
 - bikeapp2024-frontend-1  | VITE v4.5.0  ready in <time>
-6. Open the application running on port 5173
+6. In Ports (next to Terminal) change port 3000 (database) visibility to public (from private)
+7. Open the application running on port 5173
 
 _______________________________________________________________________
 
